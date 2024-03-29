@@ -112,6 +112,7 @@ const Home: NextPage = () => {
             <div className="w-full h-screen ag-theme-quartz md:h-full">
                 <AgGridReact
                     rowData={rowData}
+                    //@ts-ignore
                     columnDefs={columnDefs}
                     pagination={true}
                     paginationPageSize={15}
