@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       ag-grid-community:
-        specifier: ^32.0.1
-        version: 32.0.1
+        specifier: ^32.0.2
+        version: 32.0.2
       ag-grid-react:
         specifier: ^31.2.0
         version: 31.2.0(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
@@ -260,14 +260,14 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  ag-charts-types@10.0.1:
-    resolution: {integrity: sha512-o8aXJfO5lsLGu4jE/2MiTogLCfdJ8UCmrWNPb+AWU0YutCrBHO0uWbSuqzabZxZ4WHxwwRtTllZMT6WqTdz+qg==}
+  ag-charts-types@10.0.2:
+    resolution: {integrity: sha512-Nxo5slHOXlaeg0gRIsVnovAosQzzlYfWJtdDy0Aq/VvpJru/PJ+5i2c9aCyEhgRxhBjImsoegwkgRj7gNOWV6Q==}
 
   ag-grid-community@31.2.0:
     resolution: {integrity: sha512-Ija6X171Iq3mFZASZlriQIIdEFqA71rZIsjQD6KHy5lMmxnoseZTX2neThBav1gvr6SA6n5B2PD6eUHdZnrUfw==}
 
-  ag-grid-community@32.0.1:
-    resolution: {integrity: sha512-/eimCgJqMeyFxpJMTQuCtedKzk+BIInqhRdKdoQG8MD3yjrs/AWQFAcT6MP0T64CuNd85mxwB2t+3Ggb+S8hdA==}
+  ag-grid-community@32.0.2:
+    resolution: {integrity: sha512-vLJJUjnsG9hNK41GNuW2EHu1W264kxA/poOpcX4kmyrjU5Uzvelsbj3HdKAO9POV28iqyRdKGYfAWdn8QzA7KA==}
 
   ag-grid-react@31.2.0:
     resolution: {integrity: sha512-ObFdPmF3EC7/xWZX8NjrZjURePyFa72MWjb1ZgUqDP7Wq09OSXXyKBN1qXmfUIT3h4o5+os6tCQEqoo7Op+3ZA==}
@@ -1751,13 +1751,13 @@ snapshots:
 
   acorn@8.11.3: {}
 
-  ag-charts-types@10.0.1: {}
+  ag-charts-types@10.0.2: {}
 
   ag-grid-community@31.2.0: {}
 
-  ag-grid-community@32.0.1:
+  ag-grid-community@32.0.2:
     dependencies:
-      ag-charts-types: 10.0.1
+      ag-charts-types: 10.0.2
 
   ag-grid-react@31.2.0(react-dom@18.2.0(react@18.3.1))(react@18.3.1):
     dependencies:
