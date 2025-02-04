@@ -5,8 +5,6 @@ import { useMemo } from "react";
 import Link from "next/link";
 import type { DOCTrail } from "../types/trails";
 import { AllCommunityModule, ModuleRegistry, ColDef } from "ag-grid-community";
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-quartz.css";
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
