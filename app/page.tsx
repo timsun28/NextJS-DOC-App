@@ -1,12 +1,15 @@
 "use client";
 
-import type { NextPage } from "next";
 import { useMemo, useState } from "react";
 
 import trailsData from "../data/doc_tracks.json";
 import { AgGridReact } from "ag-grid-react"; // AG Grid Component
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the grid
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the grid
+
+import { AllCommunityModule, ModuleRegistry, provideGlobalGridOptions } from "ag-grid-community";
+ModuleRegistry.registerModules([AllCommunityModule]);
+provideGlobalGridOptions({ theme: "legacy" });
 
 interface DOCTrail {
     assetId: string;
@@ -32,7 +35,7 @@ interface DOCTrail {
     lat: number;
 }
 
-const Home: NextPage = () => {
+const Home = () => {
     const [selectedTrail, setSelectedTrail] = useState<DOCTrail>();
     const [columnDefs] = useState([
         {
@@ -56,6 +59,19 @@ const Home: NextPage = () => {
 
     return (
         <main className="relative flex flex-col gap-4 p-4 md:h-screen md:flex-row">
+            <div className="w-full h-screen ag-theme-quartz md:h-full">
+                <AgGridReact
+                    rowData={rowData}
+                    //@ts-ignore
+                    columnDefs={columnDefs}
+                    pagination={true}
+                    paginationPageSize={15}
+                    defaultColDef={defaultColDef}
+                    onRowClicked={(event) => {
+                        setSelectedTrail(event.data);
+                    }}
+                />
+            </div>
             <div className="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md md:w-1/2 md:my-0 md:max-w-lg">
                 {!selectedTrail ? (
                     <h5>Select a trail for more details</h5>
@@ -108,19 +124,6 @@ const Home: NextPage = () => {
                         <p className="font-normal text-gray-700">{selectedTrail.introduction}</p>
                     </>
                 )}
-            </div>
-            <div className="w-full h-screen ag-theme-quartz md:h-full">
-                <AgGridReact
-                    rowData={rowData}
-                    //@ts-ignore
-                    columnDefs={columnDefs}
-                    pagination={true}
-                    paginationPageSize={15}
-                    defaultColDef={defaultColDef}
-                    onRowClicked={(event) => {
-                        setSelectedTrail(event.data);
-                    }}
-                />
             </div>
         </main>
     );
