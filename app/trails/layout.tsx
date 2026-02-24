@@ -7,13 +7,17 @@ async function getTrails(): Promise<DOCTrail[]> {
     return trailsData as DOCTrail[];
 }
 
-export default async function TrailsLayout({ children }: { children: React.ReactNode }) {
+export default async function TrailsLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     const trails = await getTrails();
 
     return (
-        <main className="relative flex flex-col-reverse min-h-screen gap-4 p-4 md:h-screen md:flex-row">
+        <main className="relative flex min-h-screen flex-col-reverse gap-4 p-4 md:h-screen md:flex-row">
             <Suspense fallback={<div>Loading...</div>}>
-                <div className="grow w-full md:w-2/3">
+                <div className="w-full grow md:w-2/3">
                     <TrailsGrid trails={trails} />
                 </div>
             </Suspense>

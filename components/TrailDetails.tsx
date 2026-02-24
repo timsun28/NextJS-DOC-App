@@ -8,30 +8,36 @@ interface TrailDetailsProps {
 export default function TrailDetails({ trail }: TrailDetailsProps) {
     if (!trail) {
         return (
-            <div className="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md md:w-1/2 md:my-0 md:max-w-lg">
+            <div className="block w-full rounded-lg border border-gray-200 bg-white p-6 shadow-md md:my-0 md:w-1/2 md:max-w-lg">
                 <h5>Select a trail for more details</h5>
             </div>
         );
     }
 
     return (
-        <div className="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md md:w-1/2 md:my-0 md:max-w-lg">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{trail.name}</h5>
+        <div className="block w-full rounded-lg border border-gray-200 bg-white p-6 shadow-md md:my-0 md:w-1/2 md:max-w-lg">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                {trail.name}
+            </h5>
             <ul>
                 <li>
                     <span className="font-bold">Region:</span> {trail.region}
                 </li>
                 <li>
-                    <span className="font-bold">Location:</span> {trail.locationString}
+                    <span className="font-bold">Location:</span>{" "}
+                    {trail.locationString}
                 </li>
                 <li>
-                    <span className="font-bold">Walk Duration:</span> {trail.walkDuration}
+                    <span className="font-bold">Walk Duration:</span>{" "}
+                    {trail.walkDuration}
                 </li>
                 <li>
-                    <span className="font-bold">Difficulty:</span> {trail.walkTrackCategory.join(", ")}
+                    <span className="font-bold">Difficulty:</span>{" "}
+                    {trail.walkTrackCategory.join(", ")}
                 </li>
                 <li>
-                    <span className="font-bold">Distance:</span> {trail.distance ?? "Unknown"}
+                    <span className="font-bold">Distance:</span>{" "}
+                    {trail.distance ?? "Unknown"}
                 </li>
                 <li>
                     <Link

@@ -1,18 +1,18 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-    title: 'DOC Hike Finder',
-    description: 'An offline hiking app for the DOC tracks in New Zealand',
+    title: "DOC Hike Finder",
+    description: "An offline hiking app for the DOC tracks in New Zealand",
     icons: [
         {
-            url: '/favicon.ico',
-            rel: 'icon',
-            type: 'image/x-icon',
+            url: "/favicon.ico",
+            rel: "icon",
+            type: "image/x-icon",
         },
     ],
-    manifest: '/site.webmanifest',
-  }
+    manifest: "/site.webmanifest",
+};
 
 export default function RootLayout({
     // Layouts must accept a children prop.

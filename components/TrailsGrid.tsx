@@ -19,7 +19,10 @@ export default function TrailsGrid({ trails }: TrailsGridProps) {
                 field: "name" as keyof DOCTrail,
                 filter: true,
                 cellRenderer: (params: { data: DOCTrail }) => (
-                    <Link className="text-blue-600 underline flex w-full" href={`/trails/${params.data.assetId}`}>
+                    <Link
+                        className="flex w-full text-blue-600 underline"
+                        href={`/trails/${params.data.assetId}`}
+                    >
                         {params.data.name}
                     </Link>
                 ),
@@ -28,18 +31,18 @@ export default function TrailsGrid({ trails }: TrailsGridProps) {
             { field: "locationString" as keyof DOCTrail, filter: true },
             { field: "walkDuration" as keyof DOCTrail, filter: true },
         ],
-        []
+        [],
     );
 
     const defaultColDef = useMemo(
         () => ({
             floatingFilter: true,
         }),
-        []
+        [],
     );
 
     return (
-        <div className="w-full h-screen ag-theme-quartz md:h-full">
+        <div className="ag-theme-quartz h-screen w-full md:h-full">
             <AgGridReact
                 rowData={trails}
                 columnDefs={columnDefs}
